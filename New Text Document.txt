@@ -1,3 +1,7 @@
 https://crxdoc-zh.appspot.com/extensions/browserAction.html
 
 http://www.cnblogs.com/walkingp/archive/2011/03/31/2001628.html
+
+CSS3 tooltips:
+http://www.yzzmf.com/html/qianduankaifa/yuanmaxuexi/2011-09-29/40.html
+
