@@ -1,0 +1,20 @@
+﻿{
+	"ext_desc":{
+		"message":"轻轻一点即可返回页面顶部。支持快捷键。"
+	},
+	"ext_option_title":{
+		"message":"选项 | Back to Top"
+	},
+	"ext_option_h1":{
+		"message":"Back to Top 选项"
+	},
+	"ext_option_addIcon":{
+		"message":"在网页中添加返回顶部图标"
+	},
+	"ext_option_animation":{
+		"message":"启用动画"
+	},
+	"ext_option_hotkeys":{
+		"message":"启用快捷键 ( ALT + ↑ )"
+	}
+}

@@ -1,0 +1,20 @@
+﻿{
+	"ext_desc":{
+		"message":"Go back to top by a simple click. Hotkeys are also supported."
+	},
+	"ext_option_title":{
+		"message":"Options | Back to Top"
+	},
+	"ext_option_h1":{
+		"message":"Back to Top Options"
+	},
+	"ext_option_addIcon":{
+		"message":"Add a back-to-top icon to the page"
+	},
+	"ext_option_animation":{
+		"message":"Enable animation"
+	},
+	"ext_option_hotkeys":{
+		"message":"Enable hotkeys ( ALT + ↑ )"
+	}
+}

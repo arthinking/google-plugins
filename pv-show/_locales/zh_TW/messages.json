@@ -1,0 +1,20 @@
+﻿{
+	"ext_desc":{
+		"message":"輕輕一點即可返回網頁頂部。支持熱鍵。"
+	},
+	"ext_option_title":{
+		"message":"選項 | Back to Top"
+	},
+	"ext_option_h1":{
+		"message":"Back to Top 選項"
+	},
+	"ext_option_addIcon":{
+		"message":"在網頁中添加返回頂部圖標"
+	},
+	"ext_option_animation":{
+		"message":"啟用動畫"
+	},
+	"ext_option_hotkeys":{
+		"message":"啟用熱鍵 ( ALT + ↑ )"
+	}
+}

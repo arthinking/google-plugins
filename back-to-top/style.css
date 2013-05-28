@@ -1,0 +1,18 @@
+#ext_btt
+{
+	position:fixed;
+	right:5px;
+	bottom:5px;
+}
+#ext_btt a{
+	padding:0;
+	margin:0;
+	width:32px;
+	height:32px;
+	text-decoration:none;
+}
+#ext_btt a img{
+	border:none;
+	padding:0;
+	margin:0;
+}
