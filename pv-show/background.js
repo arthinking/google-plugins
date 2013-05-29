@@ -9,7 +9,7 @@ chrome.tabs.onSelectionChanged.addListener(function(tabId, selectInfo) {
 });
 chrome.extension.onRequest.addListener(
   function() {
-    chrome.tabs.executeScript(null, {code: "goTop(" + string2Bool(localStorage.animation) + ");", allFrames: true});
+    chrome.tabs.executeScript(null, {code: "showListInfo();", allFrames: true});
 });
 
 function initialize(tabId){

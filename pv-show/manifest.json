@@ -1,6 +1,6 @@
 ﻿{
 	"manifest_version": 2,
-  	"name": "Back to Top",
+  	"name": "pv show",
   	"description": "__MSG_ext_desc__",
   	"version": "2",
   	"default_locale": "en",
@@ -15,7 +15,7 @@
   	"browser_action": {
    		"default_icon": "images/icon.png",
    		"default_popup": "options.html",
-    	"default_title": "Back to Top"
+    	"default_title": "网页流量统计"
   	},
   	"background": {
   		"scripts": ["background.js"]
