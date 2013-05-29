@@ -1,8 +1,8 @@
-var popupHtml = '<div>'+
-					'<div>pv:1000</div>'+
-					'<div>ip:1000</div>'+
-					'<div>second：</div>'+
-					'<div>third：</div>'+
+var popupHtml = '<div class="pv-popup-div pv-popup-c">'+
+					'<div class="pv-popup-item">pv:1000</div>'+
+					'<div class="pv-popup-item">ip:1000</div>'+
+					'<div class="pv-popup-item">second：</div>'+
+					'<div class="pv-popup-item">third：</div>'+
 				'</div>';
 document.onkeydown=function(){
 	if(!ext_btt_hotkeys) return;
@@ -56,20 +56,42 @@ function goTop(animation, acceleration, time) {
 
 function showListInfo(){
 	var hrefs = document.getElementsByTagName("a");
-	for(var i=0; i<hrefs.length; i++){
-		var href = hrefs[i];
-		$(href).css({
+	if($(hrefs[0]).css('border-width') == '1px'){
+		$(hrefs).css({
+			'border' : '' 
+		});
+	} else {
+		$(hrefs).css({
 			'border' : '1px red solid' 
 		});
 	}
+	
 	$(hrefs).hover(function(e){
-		var x = $(this).offset().top;
-		var y = $(this).offset().left;
-		e.stopPropagation();			
+		if($(this).css('border-width') == '1px'){
+			var x = $(this).offset().top;
+			var y = $(this).offset().left;
+			if($(this).css('position') != 'absolute'){
+				$(this).css({
+					'position' : 'relative'
+				});			
+			}
+			var popupDom = $(popupHtml); 
+			popupDom.css({
+				'position' : 'absolute',
+				'left' : '10px',
+				'top' : '20px'
+			});
+			console.log(popupDom);
+			$(this).append(popupDom);
+			e.stopPropagation();
+		}
+	}).mouseout(function(e){
+		if($(this).css('border-width') == '1px'){
+			$(this).find('.pv-popup-div').remove();
+			e.stopPropagation();
+		}
 	});
 }
-
-
 
 
 

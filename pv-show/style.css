@@ -16,3 +16,68 @@
 	padding:0;
 	margin:0;
 }
+
+.pv-popup-c{
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #ccc;
+    position:relative;
+    z-index: 9999;
+    font-weight:normal;
+    color:#000;
+}
+.pv-popup-div{
+	background:#fff;
+	background: -webkit-gradient(linear, 0% 20%, 0% 100%, from(#fff), to(#fff), color-stop(.1,#f3f3f3));
+    background: -webkit-linear-gradient(0% 0%, #fff, #f3f3f3 10%, #fff);
+    background: -moz-linear-gradient(0% 0%, #fff, #f3f3f3 10%, #fff);
+    background: -o-linear-gradient(0% 0%, #fff, #f3f3f3 10%, #fff);
+    /*设置Box的阴影效果*/
+    -webkit-box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1) inset;
+    /*制作右下脚折边效果*/
+    -moz-border-radius: 0 0 6px 0 / 0 0 50px 0;
+    -webkit-border-radius: 0 0 6px 0 / 0 0 50px 0;
+    border-radius: 0 0 6px 0 / 0 0 50px 0;
+    z-index: 9999;
+}
+/*
+.pv-popup-div:before{
+	content: '';
+    width: 50px;
+    height: 100px;
+    position:absolute;
+    bottom:0; right:0;
+    -webkit-box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.1);
+    z-index:-1;
+    -webkit-transform: translate(-35px,-40px)    skew(0deg,30deg) rotate(-25deg);
+    -moz-transform: translate(-35px,-40px) skew(0deg,32deg)    rotate(-25deg);
+    -o-transform: translate(-35px,-40px) skew(0deg,32deg)    rotate(-25deg);    
+    transform: translate(-35px,-40px) skew(0deg,32deg)    rotate(-25deg);
+    z-index: 9999; 
+}
+.pv-popup-div:after{
+	content: '';
+    width: 100px;
+    height: 100px;
+    top:0; left:0;
+    position:absolute;
+    display: inline-block;
+    z-index:-1;
+    -webkit-box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: -10px -10px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: -10px -10px 15px rgba(0, 0, 0, 0.2);
+    -webkit-transform: rotate(2deg)    translate(20px,25px) skew(20deg);
+    -moz-transform: rotate(7deg) translate(20px,25px) skew(20deg);
+    -o-transform: rotate(7deg) translate(20px,25px) skew(20deg);    
+    transform: rotate(7deg) translate(20px,25px) skew(20deg);   
+    z-index: 9999; 
+}
+*/
+.pv-popup-item{
+	min-width:100px;
+	float:none;
+}

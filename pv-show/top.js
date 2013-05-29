@@ -1,6 +1,6 @@
 function initIcon(addIcon){
 	ext_btt_addIcon=addIcon;
-	changeUi();
+	// changeUi();
 }
 
 function changeUi(){
