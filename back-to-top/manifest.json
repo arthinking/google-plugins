@@ -1,0 +1,23 @@
+﻿{
+	"manifest_version": 2,
+  	"name": "Back to Top",
+  	"description": "__MSG_ext_desc__",
+  	"version": "2",
+  	"default_locale": "en",
+  	"icons": {
+		"48": "images/icon_16.png",
+		"48": "images/icon.png",
+		"128": "images/icon_128.png"
+   	},
+  	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+  	],
+  	"browser_action": {
+   		"default_icon": "images/icon.png",
+   		"default_popup": "options.html",
+    	"default_title": "Back to Top"
+  	},
+  	"background": {
+  		"scripts": ["background.js"]
+  	}
+}
