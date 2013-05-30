@@ -1,8 +1,9 @@
 var popupHtml = '<div class="pv-popup-div pv-popup-c">'+
-					'<div class="pv-popup-item">pv:1000</div>'+
-					'<div class="pv-popup-item">ip:1000</div>'+
-					'<div class="pv-popup-item">second：</div>'+
-					'<div class="pv-popup-item">third：</div>'+
+					'<div class="pv-popup-item"><span class="label">url: </span><span class="content">__URL__</span></div>'+
+					'<div class="pv-popup-item"><span class="label">pv: </span><span class="content">1000</span></div>'+
+					'<div class="pv-popup-item"><span class="label">ip: </span><span class="content">1000</span></div>'+
+					'<div class="pv-popup-item"><span class="label">second: </span><span class="content"></span></div>'+
+					'<div class="pv-popup-item"><span class="label">third: </span><span class="content"></span></div>'+
 				'</div>';
 document.onkeydown=function(){
 	if(!ext_btt_hotkeys) return;
@@ -60,6 +61,7 @@ function showListInfo(){
 		$(hrefs).css({
 			'border' : '' 
 		});
+		$('.pv-popup-div').remove();
 	} else {
 		$(hrefs).css({
 			'border' : '1px red solid' 
@@ -68,27 +70,21 @@ function showListInfo(){
 	
 	$(hrefs).hover(function(e){
 		if($(this).css('border-width') == '1px'){
-			var x = $(this).offset().top;
-			var y = $(this).offset().left;
-			if($(this).css('position') != 'absolute'){
-				$(this).css({
-					'position' : 'relative'
-				});			
-			}
-			var popupDom = $(popupHtml); 
+			$('.pv-popup-div').remove();
+			var x = e.pageX;
+			var y = e.pageY;
+			var url = $(this).attr('href');
+			var popupDom = $(popupHtml.replace(/__URL__/g, url)); 
 			popupDom.css({
 				'position' : 'absolute',
-				'left' : '10px',
-				'top' : '20px'
+				'left' : x + 'px',
+				'top' : y + 'px'
 			});
-			console.log(popupDom);
-			$(this).append(popupDom);
+			$(document.body).append(popupDom);
 			e.stopPropagation();
-		}
-	}).mouseout(function(e){
-		if($(this).css('border-width') == '1px'){
-			$(this).find('.pv-popup-div').remove();
-			e.stopPropagation();
+			popupDom.mouseleave(function(e){
+				$(this).remove();
+			});
 		}
 	});
 }

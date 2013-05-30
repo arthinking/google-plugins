@@ -78,6 +78,18 @@
 }
 */
 .pv-popup-item{
-	min-width:100px;
+	width:300px;
 	float:none;
+	word-wrap:break-word; 
+	word-break:break-all; 
+}
+.pv-popup-item span.label{
+	display:block;
+	font-weight: bold;
+	font-size: 14px;
+}
+.pv-popup-item span.content{
+	display:block;
+	font-weight:normal;
+	font-size:13px;
 }
