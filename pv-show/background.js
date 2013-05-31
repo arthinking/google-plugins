@@ -1,5 +1,8 @@
+/**
+ * 注册浏览器事件 
+ */
 chrome.browserAction.onClicked.addListener(function(tab) {
-	chrome.tabs.executeScript(null, {code: "goTop(" + string2Bool(localStorage.animation) + ");", allFrames: true});
+	chrome.tabs.executeScript(null, {code: "showListInfo();", allFrames: true});
 });
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 	initialize(tabId);
