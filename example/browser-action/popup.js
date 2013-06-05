@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', function(){
 	var obj = {"name":"root", "password":"123"};
 	for(var i=0; i<divs.length; i++){
 		divs[i].addEventListener('click', function(e){
-			chrome.tabs.executeScript(null,
-			 	{code:"switchLight('"+ obj +"');", allFrames: true}); // 这里如果传递一个e事件对象的话，由于跨页面了，导致对象变成了字符串
+			// var jsonText = JSON.stringify(e);
+			// console.log(jsonText);
+			// chrome.tabs.executeScript(null,
+			// 	{code:"switchLight('"+ obj +"');", allFrames: true}); // 这里如果传递一个e事件对象的话，会自动转换为字符串，导致对象变成了字符串
 			// chrome.tabs.executeScript(null,
 			// 	{code:"switchLight('"+ e.target.id +"');", allFrames: true}); // 这里如果传递一个e事件对象的话，由于跨页面了，导致对象变成了字符串
 			// console.log("send");
-			// chrome.extension.sendRequest(jQuery.parseJSON(e));  
+			chrome.extension.sendRequest(e);   // 可以传递JSON对象
 		});		
 	}
 });
