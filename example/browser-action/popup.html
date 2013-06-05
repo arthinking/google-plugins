@@ -25,8 +25,9 @@
         		background:#FFF;
     		}
 		</style>
+		<!-- 引入JS文件，这里引入的文件只能在popup.html页面中使用，不能再web页面中使用（页面中的为content script） -->
 		<script src="popup.js"></script>
-		<script src="jquery-2.0.2.min.js"></script>  <!-- 是否不应该再background.js中为页面引入jQuery? 使用原生的JS -->
+		<script src="jquery-2.0.2.min.js"></script>
 	</head>
 	<body>
 		<div id="off">关灯</div>
