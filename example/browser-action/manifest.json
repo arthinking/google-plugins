@@ -1,0 +1,21 @@
+{
+	"name": "browser action demo",
+	"version": "1.0",
+	"permissions": [
+		"tabs", "http://*/*", "https://*/*"
+	],
+	"browser_action": {
+		"default_title": "开关灯",
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"background": {
+    	"page": "background.html"
+  	},
+  	"content_scripts": [{ 
+    	"matches": ["http://www.google.com/*"], 
+      	"css": [], 
+      	"js": [] 
+    }], 
+	"manifest_version": 2
+}
