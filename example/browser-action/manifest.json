@@ -12,10 +12,5 @@
 	"background": {
     	"page": "background.html"
   	},
-  	"content_scripts": [{ 
-    	"matches": ["http://www.google.com/*"], 
-      	"css": [], 
-      	"js": [] 
-    }], 
 	"manifest_version": 2
 }
