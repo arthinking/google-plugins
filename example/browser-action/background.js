@@ -23,7 +23,9 @@ function initialize(tabId){
 	chrome.tabs.executeScript(tabId, {file: "jquery-2.0.2.js", allFrames: true});
 }
 
-
+/**
+ * 启动一个chrome.extension.onRequest事件监听器用来处理消息
+ */
 chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
     chrome.tabs.executeScript(null, {code: "switchLight("+ request +");", allFrames: true});

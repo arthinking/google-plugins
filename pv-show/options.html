@@ -1,7 +1,7 @@
 ﻿<!doctype html>
 <html>
 <head>
-<title>Options | Back to Top</title>
+<title>Options | PV show</title>
 <style>
 body{
 	font-family:helvetica, arial, sans-serif; 
@@ -33,6 +33,7 @@ label{
 </body>
 </html>
 <script>
+// 国际化获取定义的文件内容
 var message = chrome.i18n.getMessage("ext_option_title");
 document.getElementsByTagName("title")[0].innerHTML = message;
 message = chrome.i18n.getMessage("ext_option_h1");
@@ -50,6 +51,7 @@ var inputs=document.getElementsByTagName('input');
 for(var i=0; i!=inputs.length; i++){
 	(function(){
 		var tThis=inputs[i];
+		// 使用HTML5的localstorage读取和保存复选框的选中状态
 		tThis.checked=localStorage[tThis.name]=='false'?false:true;
 		tThis.onchange=function(){
 			localStorage[tThis.name]=tThis.checked;
