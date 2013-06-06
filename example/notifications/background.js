@@ -3,15 +3,21 @@
   permission in the manifest file (or calling
   "webkitNotifications.requestPermission" beforehand).
 */
+/**
+ * 显示一个时间 notification 
+ */
 function show() {
   var time = /(..)(:..)/.exec(new Date());     // The prettyprinted time.
   var hour = time[1] % 12 || 12;               // The prettyprinted hour.
   var period = time[1] < 12 ? 'a.m.' : 'p.m.'; // The period of the day.
+  // 创建一个notification
+  // http://www.cnblogs.com/hupeng/archive/2012/10/05/2712326.html
   var notification = window.webkitNotifications.createNotification(
     '48.png',                      // The image.
     hour + time[2] + ' ' + period, // The title.
     'Time to make the toast.'      // The body.
   );
+  // 显示notification
   notification.show();
 }
 
