@@ -1,32 +1,43 @@
-/**
- * 注册标签页更新时的事件
- * 这里调用了initialize()事件，把func.js注入当前标签页中 
- */
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-	initialize(tabId);
-});
-
-/**
- * 注册切换标签页时的事件
- * 这里调用了initialize()事件，把func.js注入当前标签页中
- */
-chrome.tabs.onSelectionChanged.addListener(function(tabId, selectInfo) {
-	initialize(tabId);
-});
-
-/**
- * 初始化方法 ，注入func.js事件
- * @param {Object} tabId
- */
-function initialize(tabId){
-	chrome.tabs.executeScript(tabId, {file: "func.js", allFrames: true});
-	chrome.tabs.executeScript(tabId, {file: "jquery-2.0.2.js", allFrames: true});
+/*
+  Displays a notification with the current time. Requires "notifications"
+  permission in the manifest file (or calling
+  "webkitNotifications.requestPermission" beforehand).
+*/
+function show() {
+  var time = /(..)(:..)/.exec(new Date());     // The prettyprinted time.
+  var hour = time[1] % 12 || 12;               // The prettyprinted hour.
+  var period = time[1] < 12 ? 'a.m.' : 'p.m.'; // The period of the day.
+  var notification = window.webkitNotifications.createNotification(
+    '48.png',                      // The image.
+    hour + time[2] + ' ' + period, // The title.
+    'Time to make the toast.'      // The body.
+  );
+  notification.show();
 }
 
-/**
- * 启动一个chrome.extension.onRequest事件监听器用来处理消息
- */
-chrome.extension.onRequest.addListener(
-  function(request, sender, sendResponse) {
-    chrome.tabs.executeScript(null, {code: "switchLight("+ request +");", allFrames: true});
-});
+// Conditionally initialize the options.
+if (!localStorage.isInitialized) {
+  localStorage.isActivated = true;   // The display activation.
+  localStorage.frequency = 1;        // The display frequency, in minutes.
+  localStorage.isInitialized = true; // The option initialization.
+}
+
+// Test for notification support.
+if (window.webkitNotifications) {
+  // While activated, show notifications at the display frequency.
+  if (JSON.parse(localStorage.isActivated)) { show(); }
+
+  var interval = 0; // The display interval, in minutes.
+
+  setInterval(function() {
+    interval++;
+
+    if (
+      JSON.parse(localStorage.isActivated) &&
+        localStorage.frequency <= interval
+    ) {
+      show();
+      interval = 0;
+    }
+  }, 60000);
+}

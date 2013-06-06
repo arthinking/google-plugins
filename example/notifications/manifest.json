@@ -1,16 +1,24 @@
 {
-	"name": "browser action demo",
-	"version": "1.0",
-	"permissions": [
-		"tabs", "http://*/*", "https://*/*"
-	],
-	"browser_action": {
-		"default_title": "开关灯",
-		"default_icon": "icon.png",
-		"default_popup": "popup.html"
-	},
-	"background": {
-    	"page": "background.html"
-  	},
-	"manifest_version": 2
+  // 这个字段将用在安装对话框，扩展管理界面，和store里面，弹出通知的标题
+  "name": "系统通知",
+  // 扩展的版本用一个到4个数字来表示，中间用点隔开,必须在0到65535之间，非零数字不能0开头
+  "version": "1",
+  // 描述扩种的一段字符串（不能是html或者其他格式，不能超过132个字符）。这个描述必须对浏览器扩展的管理界面和Chrome Web Store都合适。
+  "description": "Shows off desktop notifications, which are \"toast\" windows that pop up on the desktop.",
+  // 一个或者多个图标来表示扩展，app，和皮肤
+  "icons": {
+  	"16": "16.png",  //  
+  	"48": "48.png",  // 
+  	"128": "128.png"  // 
+  },
+  "permissions": ["tabs", "notifications"],
+  // 选项页，添加了之后，可以再扩展管理页面 chrome://extensions上提供一个选项的链接，点击汲取即可打开该选项页
+  "options_page": "options.html",
+  "background": { "scripts": ["background.js"] },
+  "manifest_version": 2,
+  
+  // crbug.com/134315
+  "web_accessible_resources": [
+    "48.png"
+  ]
 }
