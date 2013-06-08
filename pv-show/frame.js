@@ -23,19 +23,19 @@ function initHotkeys(hotkeys){
 
 function showListInfo(){
 	var hrefs = document.getElementsByTagName("a");
-	if($(hrefs[0]).css('border-width') == '1px'){
+	if($(hrefs[0]).css('border-bottom-width') == '1px'){
 		$(hrefs).css({
-			'border' : '' 
+			'border-bottom' : '' 
 		});
 		$('.pv-popup-div').remove();
 	} else {
 		$(hrefs).css({
-			'border' : '1px red solid' 
+			'border-bottom' : '1px red solid' 
 		});
 	}
 	
 	$(hrefs).hover(function(e){
-		if($(this).css('border-width') == '1px'){
+		if($(this).css('border-bottom-width') == '1px'){
 			$('.pv-popup-div').remove();
 			var x = e.pageX;
 			var y = e.pageY;
@@ -46,6 +46,16 @@ function showListInfo(){
 			var popupY = y;
 			var url = $(this).attr('href');
 			var popupDom = $(popupHtml.replace(/__URL__/g, url)); 
+			
+			// 跨域请求获取流量数据
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://api.example.com/data.json", true);
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					var resp = JSON.parse(xhr.responseText);
+				}
+			}
+			
 			popupDom.css({
 				'position' : 'absolute',
 				'left' : popupX + 'px',
@@ -59,8 +69,6 @@ function showListInfo(){
 		}
 	});
 }
-
-
 
 
 

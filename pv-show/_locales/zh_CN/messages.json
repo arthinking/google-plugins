@@ -1,20 +1,20 @@
 ﻿{
 	"ext_desc":{
-		"message":"轻轻一点即可返回页面顶部。支持快捷键。"
+		"message":"网页中所有可访问链接的流量统计"
 	},
 	"ext_option_title":{
-		"message":"选项 | Back to Top"
+		"message":"网页流量统计"
 	},
 	"ext_option_h1":{
-		"message":"Back to Top 选项"
+		"message":"网页流量统计"
 	},
-	"ext_option_addIcon":{
-		"message":"在网页中添加返回顶部图标"
+	"ext_option_show_url_info":{
+		"message":"开启浮动显示链接信息"
 	},
-	"ext_option_animation":{
-		"message":"启用动画"
+	"ext_option_show_all_url":{
+		"message":"显示所有链接信息"
 	},
 	"ext_option_hotkeys":{
-		"message":"启用快捷键 ( ALT + ↑ )"
+		"message":"快捷键显示链接信息（alt + s）"
 	}
 }
