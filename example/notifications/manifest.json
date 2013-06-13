@@ -7,17 +7,19 @@
   "description": "Shows off desktop notifications, which are \"toast\" windows that pop up on the desktop.",
   // 一个或者多个图标来表示扩展，app，和皮肤
   "icons": {
-  	"16": "16.png",  //  
-  	"48": "48.png",  // 
-  	"128": "128.png"  // 
+  	"16": "16.png",  //  应用的fa网页图标
+  	"48": "48.png",  // 应用管理页面需要这个图标
+  	"128": "128.png"  // 在webstore安装的时候使用
   },
+  // 扩展或app将使用的一组权限
   "permissions": ["tabs", "notifications"],
-  // 选项页，添加了之后，可以再扩展管理页面 chrome://extensions上提供一个选项的链接，点击汲取即可打开该选项页
-  "options_page": "options.html",
+  // Manifest V2 用background属性取代了background_page
+  // 这里指定了一个Javascript脚本
   "background": { "scripts": ["background.js"] },
+  // Manifest version 1在Chrome18中已经被弃用了，这里应该指定为2
   "manifest_version": 2,
   
-  // crbug.com/134315
+  // manifest_version 2中，指定扩展程序包内可以在网页中使用的资源路径（相对于扩展程序包的根目录）需要使用该属性把资源列入白名单，插入的content script本身不需要加入白名单
   "web_accessible_resources": [
     "48.png"
   ]
